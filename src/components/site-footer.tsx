@@ -56,7 +56,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-black/10">
         <p className="mx-auto max-w-6xl px-6 py-5 text-sm text-[#3a3a3a]">
-          © {new Date().getFullYear()} Viralos. Official Instagram API only.
+          © {SITE.updated.slice(-4)} Viralos. Official Instagram API only.
         </p>
       </div>
     </footer>
