@@ -10,7 +10,7 @@ export function AccessForm() {
 
   return (
     <form
-      className="mt-8 flex flex-col gap-3 sm:flex-row"
+      className="mt-8 flex flex-col gap-3 md:flex-row"
       onSubmit={(event) => {
         event.preventDefault();
         const body = `Work email: ${email}\nInstagram professional account: ${account}\n\nPlease send early access details.`;
@@ -37,9 +37,9 @@ export function AccessForm() {
         value={account}
         onChange={(event) => setAccount(event.target.value)}
         placeholder="@account"
-        className="h-12 w-full rounded-2xl border-2 border-black bg-white px-4 text-[#000000] shadow-[3px_3px_0_0_#000] outline-none placeholder:text-black/40 sm:w-40"
+        className="h-12 w-full rounded-2xl border-2 border-black bg-white px-4 text-[#000000] shadow-[3px_3px_0_0_#000] outline-none placeholder:text-black/40 md:w-44"
       />
-      <StickerButton type="submit" variant="yellow">
+      <StickerButton type="submit" variant="yellow" className="w-full md:w-auto">
         Request access
       </StickerButton>
     </form>

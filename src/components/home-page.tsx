@@ -134,7 +134,7 @@ export function HomePage() {
 
           <div className="mx-auto max-w-6xl px-6 pb-16 pt-10">
             <div className="overflow-hidden rounded-[2rem] border border-black/10 bg-[#f6fbfd] p-3 shadow-[0_28px_70px_-36px_rgba(21,133,172,0.55)] md:p-5">
-              <div className="grid gap-3 md:grid-cols-[240px_1fr]">
+              <div className="grid gap-3 lg:grid-cols-[240px_1fr]">
                 <div className="rounded-[1.4rem] bg-white p-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#1585AC]">
                     Inbox

@@ -16,7 +16,7 @@ export function CookieNotice() {
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 border-t border-black/10 bg-white/95 px-4 py-3 backdrop-blur">
-      <div className="mx-auto flex max-w-5xl flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto flex max-w-5xl flex-col items-stretch gap-3 lg:flex-row lg:items-center lg:justify-between">
         <p className="text-sm leading-6 text-[#1a1a1a]">
           This site does not set analytics or advertising cookies, and it does not load a Meta Pixel.{" "}
           <a className="text-[#1585AC] underline" href="/cookies">
@@ -25,6 +25,7 @@ export function CookieNotice() {
         </p>
         <StickerButton
           type="button"
+          className="w-full lg:w-auto"
           onClick={() => {
             window.localStorage.setItem(KEY, "dismissed");
             setOpen(false);

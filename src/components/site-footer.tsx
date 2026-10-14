@@ -18,8 +18,8 @@ const policies = [
 export function SiteFooter() {
   return (
     <footer className="border-t border-black/10 bg-white">
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
-        <div>
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr] lg:gap-12 lg:py-16">
+        <div className="sm:col-span-2 lg:col-span-1">
           <img src="/viralos-logo.png" alt="Viralos" className="h-11 w-auto" />
           <p className="mt-4 max-w-sm text-[#3a3a3a]">
             Viralos replies to Instagram conversations for professional accounts, through the
