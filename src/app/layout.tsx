@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Instrument_Serif } from "next/font/google";
+import { Inter } from "next/font/google";
 import { CookieNotice } from "@/components/cookie-notice";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
-});
-
-const instrument = Instrument_Serif({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  weight: "400",
+  display: "swap",
+  variable: "--font-inter",
 });
 
 const siteUrl =
@@ -41,9 +36,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${instrument.variable} dark h-full antialiased`}
+      className={`${inter.variable} ${inter.className} dark h-full antialiased`}
     >
-      <body className="min-h-full overflow-x-hidden bg-[#0c0b10] text-[#f4efe8]">
+      <body className="min-h-full overflow-x-hidden bg-[#0c0b10] font-sans text-[#f4efe8]">
         {children}
         <CookieNotice />
       </body>

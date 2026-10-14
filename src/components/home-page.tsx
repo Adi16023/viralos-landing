@@ -71,7 +71,7 @@ export function HomePage() {
               text="Instagram DM automation"
               className="text-sm uppercase tracking-[0.22em] text-[#f4efe8]"
             />
-            <h1 className="mt-5 max-w-full text-balance text-left font-[family-name:var(--font-serif)] text-[clamp(2.35rem,9vw,6.6rem)] leading-[0.95] text-[#f4efe8]">
+            <h1 className="mt-5 max-w-full text-balance text-left font-sans text-[clamp(2.35rem,9vw,6.6rem)] leading-[0.95] text-[#f4efe8]">
               Reply while the conversation is still open.
             </h1>
             <div className="mt-8 flex flex-wrap items-center gap-3 text-xl text-[#f4efe8]">
@@ -101,7 +101,7 @@ export function HomePage() {
           <ShinyText text="Inbox" className="text-sm uppercase tracking-[0.18em]" />
           <ScrollReveal
             containerClassName="mt-4"
-            textClassName="font-[family-name:var(--font-serif)] text-[clamp(2.2rem,5vw,4.2rem)] leading-[1.05] text-[#f4efe8]"
+            textClassName="font-sans text-[clamp(2.2rem,5vw,4.2rem)] leading-[1.05] text-[#f4efe8]"
             baseOpacity={1}
             enableBlur={false}
           >
@@ -119,7 +119,7 @@ export function HomePage() {
               ["Reply with the rules on", "The send stays inside Meta’s window, carries your opt-out, and stops when the person says stop."],
             ].map(([title, copy]) => (
               <SpotlightCard key={title} theme="dark" className="p-6" spotlightColor="rgba(255, 92, 57, 0.45)">
-                <h2 className="font-[family-name:var(--font-serif)] text-3xl text-[#f4efe8]">{title}</h2>
+                <h2 className="font-sans text-3xl text-[#f4efe8]">{title}</h2>
                 <p className="mt-3 text-[#b7b0a6]">{copy}</p>
               </SpotlightCard>
             ))}
@@ -133,7 +133,7 @@ export function HomePage() {
             "Spend less time refreshing the inbox to find the message that matters.",
           ].map((line) => (
             <FadeContent key={line} initialOpacity={1} className="border-t border-white/10 pt-8">
-              <p className="font-[family-name:var(--font-serif)] text-3xl text-[#f4efe8] md:text-5xl">{line}</p>
+              <p className="font-sans text-3xl text-[#f4efe8] md:text-5xl">{line}</p>
             </FadeContent>
           ))}
         </section>
@@ -204,7 +204,7 @@ export function HomePage() {
 
         <section id="how" className="mx-auto max-w-5xl px-6 py-24">
           <p className="text-sm uppercase tracking-[0.18em] text-[#ffb089]">02 · The flow</p>
-          <h2 className="mt-3 max-w-3xl font-[family-name:var(--font-serif)] text-4xl text-[#f4efe8] md:text-6xl">
+          <h2 className="mt-3 max-w-3xl font-sans text-4xl text-[#f4efe8] md:text-6xl">
             From the first message to a person, when a person is needed.
           </h2>
           <div className="mt-10">
@@ -251,7 +251,7 @@ export function HomePage() {
 
         <section id="rules" className="mx-auto max-w-5xl px-6 py-24">
           <ShinyText text="Built for the review, not around it" className="text-sm uppercase tracking-[0.18em]" />
-          <h2 className="mt-4 max-w-3xl font-[family-name:var(--font-serif)] text-4xl text-[#f4efe8] md:text-6xl">
+          <h2 className="mt-4 max-w-3xl font-sans text-4xl text-[#f4efe8] md:text-6xl">
             Meta’s messaging rules are the product rules.
           </h2>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -271,7 +271,7 @@ export function HomePage() {
                 glareColor="#ff5c39"
               >
                 <div className="flex h-full flex-col justify-between p-5 text-left">
-                  <CountUp to={Number(value)} className="font-[family-name:var(--font-serif)] text-5xl text-[#f4efe8]" />
+                  <CountUp to={Number(value)} className="font-sans text-5xl text-[#f4efe8]" />
                   <div>
                     <p className="text-[#ffb089]">{label}</p>
                     <p className="mt-1 text-sm text-[#b7b0a6]">{copy}</p>
@@ -336,7 +336,7 @@ export function HomePage() {
         <section id="access" className="mx-auto max-w-3xl px-6 py-20">
           <BorderGlow glowColor="18 90% 60%" backgroundColor="#141218" borderRadius={28} colors={["#ff5c39", "#f0b429", "#c084fc"]}>
             <div className="p-8 md:p-12">
-              <GradientText className="block font-[family-name:var(--font-serif)] text-[clamp(2.4rem,8vw,3.5rem)] leading-tight" colors={["#f4efe8", "#ffb089", "#f0b429"]}>
+              <GradientText className="block font-sans text-[clamp(2.4rem,8vw,3.5rem)] leading-tight" colors={["#f4efe8", "#ffb089", "#f0b429"]}>
                 The next reply starts here.
               </GradientText>
               <p className="mt-4 max-w-xl text-[#b7b0a6]">
