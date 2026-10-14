@@ -1,6 +1,5 @@
 "use client";
 
-import GradientText from "@/components/GradientText";
 import ShinyText from "@/components/ShinyText";
 import { SITE } from "@/lib/site";
 
@@ -16,9 +15,7 @@ export function SiteFooter() {
     <footer className="border-t border-white/10 px-6 py-16">
       <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.4fr_1fr]">
         <div>
-          <GradientText className="text-3xl" colors={["#f4efe8", "#ff5c39", "#f0b429"]}>
-            Viralos
-          </GradientText>
+          <img src="/viralos-logo.png" alt="Viralos" className="h-12 w-auto" />
           <p className="mt-4 max-w-md text-[#b7b0a6]">
             Viralos replies to Instagram conversations for professional accounts, through the
             official API, after a person reaches out.

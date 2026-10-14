@@ -50,8 +50,6 @@ const PillNav: React.FC<PillNavProps> = ({
   const circleRefs = useRef<Array<HTMLSpanElement | null>>([]);
   const tlRefs = useRef<Array<gsap.core.Timeline | null>>([]);
   const activeTweenRefs = useRef<Array<gsap.core.Tween | null>>([]);
-  const logoImgRef = useRef<HTMLImageElement | null>(null);
-  const logoTweenRef = useRef<gsap.core.Tween | null>(null);
   const hamburgerRef = useRef<HTMLButtonElement | null>(null);
   const mobileMenuRef = useRef<HTMLDivElement | null>(null);
   const navItemsRef = useRef<HTMLDivElement | null>(null);
@@ -169,19 +167,6 @@ const PillNav: React.FC<PillNavProps> = ({
     });
   };
 
-  const handleLogoEnter = () => {
-    const img = logoImgRef.current;
-    if (!img) return;
-    logoTweenRef.current?.kill();
-    gsap.set(img, { rotate: 0 });
-    logoTweenRef.current = gsap.to(img, {
-      rotate: 360,
-      duration: 0.2,
-      ease,
-      overwrite: 'auto'
-    });
-  };
-
   const toggleMobileMenu = () => {
     const newState = !isMobileMenuOpen;
     setIsMobileMenuOpen(newState);
@@ -265,36 +250,32 @@ const PillNav: React.FC<PillNavProps> = ({
           <Link
             to={items[0].href}
             aria-label="Home"
-            onMouseEnter={handleLogoEnter}
             role="menuitem"
             ref={el => {
               logoRef.current = el;
             }}
-            className="rounded-full p-2 inline-flex items-center justify-center overflow-hidden"
+            className="inline-flex items-center justify-center overflow-hidden"
             style={{
-              width: 'var(--nav-h)',
               height: 'var(--nav-h)',
-              background: 'var(--base, #000)'
+              background: 'transparent'
             }}
           >
-            <img src={logo} alt={logoAlt} ref={logoImgRef} className="w-full h-full object-cover block" />
+            <img src={logo} alt={logoAlt} className="block h-8 w-auto max-w-[9.5rem] object-contain md:h-9 md:max-w-[11rem]" />
           </Link>
         ) : (
           <a
             href={items?.[0]?.href || '#'}
             aria-label="Home"
-            onMouseEnter={handleLogoEnter}
             ref={el => {
               logoRef.current = el;
             }}
-            className="rounded-full p-2 inline-flex items-center justify-center overflow-hidden"
+            className="inline-flex items-center justify-center overflow-hidden"
             style={{
-              width: 'var(--nav-h)',
               height: 'var(--nav-h)',
-              background: 'var(--base, #000)'
+              background: 'transparent'
             }}
           >
-            <img src={logo} alt={logoAlt} ref={logoImgRef} className="w-full h-full object-cover block" />
+            <img src={logo} alt={logoAlt} className="block h-8 w-auto max-w-[9.5rem] object-contain md:h-9 md:max-w-[11rem]" />
           </a>
         )}
 

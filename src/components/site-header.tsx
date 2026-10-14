@@ -15,7 +15,7 @@ export function SiteHeader() {
     <header className="pointer-events-none fixed inset-x-0 top-0 z-40">
       <div className="pointer-events-auto mx-auto max-w-6xl px-4 pt-4">
         <PillNav
-          logo="/viralos-mark.svg"
+          logo="/viralos-logo.png"
           logoAlt="Viralos"
           items={items}
           baseColor="#f4efe8"
