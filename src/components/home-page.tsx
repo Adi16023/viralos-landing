@@ -1,4 +1,5 @@
 import { AccessForm } from "@/components/access-form";
+import { HeroInstagram } from "@/components/hero-instagram";
 import { StickerButton } from "@/components/sticker-button";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -115,21 +116,24 @@ export function HomePage() {
       <SiteHeader />
       <main>
         <section className="bg-white">
-          <div className="mx-auto max-w-6xl px-6 pb-4 pt-16 md:pt-24">
-            <p className="text-sm font-semibold text-[#1585AC]">Instagram DM automation</p>
-            <h1 className="mt-4 max-w-4xl text-balance font-sans text-[clamp(2.8rem,6.4vw,5.6rem)] font-semibold leading-[0.96] tracking-[-0.045em] text-[#000000]">
-              Reply while the conversation is still open.
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#3a3a3a]">
-              Viralos answers for professional accounts through the official Instagram API. The
-              person goes first. The 24-hour window does the rest.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <StickerButton href="/#access" variant="yellow">
-                Request access
-              </StickerButton>
-              <StickerButton href="/#rules">See the rules</StickerButton>
+          <div className="mx-auto grid max-w-6xl items-center gap-6 px-6 pb-4 pt-12 md:pt-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+            <div>
+              <p className="text-sm font-semibold text-[#1585AC]">Instagram DM automation</p>
+              <h1 className="mt-4 max-w-4xl text-balance font-sans text-[clamp(2.8rem,6.4vw,5.6rem)] font-semibold leading-[0.96] tracking-[-0.045em] text-[#000000]">
+                Reply while the conversation is still open.
+              </h1>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#3a3a3a]">
+                Viralos answers for professional accounts through the official Instagram API. The
+                person goes first. The 24-hour window does the rest.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <StickerButton href="/#access" variant="yellow">
+                  Request access
+                </StickerButton>
+                <StickerButton href="/#rules">See the rules</StickerButton>
+              </div>
             </div>
+            <HeroInstagram />
           </div>
 
           <div className="mx-auto max-w-6xl px-6 pb-16 pt-10">

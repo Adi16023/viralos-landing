@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { CookieNotice } from "@/components/cookie-notice";
+import { SiteLoader } from "@/components/site-loader";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${inter.className} h-full antialiased`}
     >
       <body className="min-h-full overflow-x-hidden bg-white font-sans text-black">
+        <SiteLoader />
         {children}
         <CookieNotice />
       </body>
