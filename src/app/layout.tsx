@@ -40,7 +40,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${inter.variable} ${inter.className} h-full antialiased`}
     >
-      <body className="min-h-full overflow-x-hidden bg-white pr-4 font-sans text-black">
+      <body className="min-h-full overflow-x-hidden bg-white pr-2 font-sans text-black">
         <SiteLoader />
         {children}
         <CookieNotice />

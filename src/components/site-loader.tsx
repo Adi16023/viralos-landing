@@ -24,7 +24,9 @@ export function SiteLoader() {
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const timer = window.setTimeout(() => setPhase("leave"), reduce ? 300 : 6000);
+    const timer = window.setTimeout(() => {
+      setPhase((current) => (current === "play" ? "leave" : current));
+    }, reduce ? 300 : 6000);
     return () => window.clearTimeout(timer);
   }, []);
 
@@ -43,7 +45,7 @@ export function SiteLoader() {
       aria-live="polite"
       aria-label="Loading"
     >
-      <LoadingAnimation onDone={() => setPhase("leave")} />
+      <LoadingAnimation onDone={() => setPhase((current) => (current === "play" ? "leave" : current))} />
     </div>
   );
 }
