@@ -15,7 +15,7 @@ export function CookieNotice() {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-black/10 bg-white/95 px-4 py-3 backdrop-blur">
+    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-black/10 bg-white/95 px-4 py-3 lg:px-2 backdrop-blur">
       <div className="mx-auto flex max-w-5xl flex-col items-stretch gap-3 lg:flex-row lg:items-center lg:justify-between">
         <p className="text-sm leading-6 text-[#1a1a1a]">
           This site does not set analytics or advertising cookies, and it does not load a Meta Pixel.{" "}

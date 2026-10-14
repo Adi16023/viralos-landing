@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { CookieNotice } from "@/components/cookie-notice";
 import { SiteLoader } from "@/components/site-loader";
+import { ThemeScrollbar } from "@/components/theme-scrollbar";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
@@ -39,10 +40,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${inter.variable} ${inter.className} h-full antialiased`}
     >
-      <body className="min-h-full overflow-x-hidden bg-white font-sans text-black">
+      <body className="min-h-full overflow-x-hidden bg-white pr-4 font-sans text-black">
         <SiteLoader />
         {children}
         <CookieNotice />
+        <ThemeScrollbar />
       </body>
     </html>
   );

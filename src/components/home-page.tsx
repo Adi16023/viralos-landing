@@ -116,7 +116,7 @@ export function HomePage() {
       <SiteHeader />
       <main>
         <section className="bg-white">
-          <div className="mx-auto grid max-w-6xl items-center gap-6 px-6 pb-4 pt-12 md:pt-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+          <div className="mx-auto grid max-w-6xl items-center gap-6 px-6 lg:px-3 pb-4 pt-12 md:pt-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
             <div>
               <p className="text-sm font-semibold text-[#1585AC]">Instagram DM automation</p>
               <h1 className="mt-4 max-w-4xl text-balance font-sans text-[clamp(2.8rem,6.4vw,5.6rem)] font-semibold leading-[0.96] tracking-[-0.045em] text-[#000000]">
@@ -136,7 +136,7 @@ export function HomePage() {
             <HeroInstagram />
           </div>
 
-          <div className="mx-auto max-w-6xl px-6 pb-16 pt-10">
+          <div className="mx-auto max-w-6xl px-6 lg:px-3 pb-16 pt-10">
             <div className="overflow-hidden rounded-[2rem] border border-black/10 bg-[#f6fbfd] p-3 shadow-[0_28px_70px_-36px_rgba(21,133,172,0.55)] md:p-5">
               <div className="grid gap-3 lg:grid-cols-[240px_1fr]">
                 <div className="rounded-[1.4rem] bg-white p-4">
@@ -195,7 +195,7 @@ export function HomePage() {
           </div>
         </section>
 
-        <section id="product" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <section id="product" className="mx-auto max-w-6xl px-6 lg:px-3 py-20 md:py-28">
           <div className="max-w-3xl">
             <h2 className="font-sans text-4xl font-semibold tracking-[-0.04em] text-[#000000] md:text-6xl">
               Scale the conversations people already started.
@@ -219,7 +219,7 @@ export function HomePage() {
         </section>
 
         <section className="bg-[#f6fbfd]">
-          <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+          <div className="mx-auto max-w-6xl px-6 lg:px-3 py-20 md:py-28">
             <h2 className="max-w-3xl font-sans text-4xl font-semibold tracking-[-0.04em] text-[#000000] md:text-6xl">
               Your inbox, before and after.
             </h2>
@@ -256,7 +256,7 @@ export function HomePage() {
           </div>
         </section>
 
-        <section id="how" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <section id="how" className="mx-auto max-w-6xl px-6 lg:px-3 py-20 md:py-28">
           <h2 className="max-w-3xl font-sans text-4xl font-semibold tracking-[-0.04em] text-[#000000] md:text-6xl">
             Up and running in four steps.
           </h2>
@@ -275,7 +275,7 @@ export function HomePage() {
         </section>
 
         <section id="rules" className="bg-[#1585AC] text-white">
-          <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+          <div className="mx-auto max-w-6xl px-6 lg:px-3 py-20 md:py-28">
             <h2 className="max-w-3xl font-sans text-4xl font-semibold tracking-[-0.04em] md:text-6xl">
               Meta’s messaging rules are the product rules.
             </h2>
@@ -309,7 +309,7 @@ export function HomePage() {
           </div>
         </section>
 
-        <section id="faq" className="mx-auto max-w-3xl px-6 py-20 md:py-28">
+        <section id="faq" className="mx-auto max-w-3xl px-6 lg:px-3 py-20 md:py-28">
           <h2 className="font-sans text-4xl font-semibold tracking-[-0.04em] text-[#000000] md:text-5xl">
             Questions, before you connect an account.
           </h2>
@@ -329,7 +329,7 @@ export function HomePage() {
         </section>
 
         <section id="access" className="bg-[#F6F648]">
-          <div className="mx-auto max-w-3xl px-6 py-20 md:py-24">
+          <div className="mx-auto max-w-3xl px-6 lg:px-3 py-20 md:py-24">
             <h2 className="font-sans text-[clamp(2.4rem,5vw,4.2rem)] font-semibold leading-[1.02] tracking-[-0.04em] text-[#000000]">
               The next reply starts here.
             </h2>

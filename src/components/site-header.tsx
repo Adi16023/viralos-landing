@@ -30,7 +30,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-black/10 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 lg:px-6">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 lg:px-3">
         <a href="/" className="min-w-0 shrink" aria-label="Viralos home">
           <img
             src="/viralos-logo.png"

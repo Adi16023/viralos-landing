@@ -15,7 +15,7 @@ export function LegalShell({
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto max-w-3xl px-6 pb-24 pt-16">
+      <main className="mx-auto max-w-3xl px-6 lg:px-3 pb-24 pt-16">
         <p className="text-sm font-semibold text-[#1585AC]">{kicker}</p>
         <h1 className="mt-4 font-sans text-5xl tracking-[-0.04em] text-[#000000]">
           {title}

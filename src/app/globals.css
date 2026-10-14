@@ -211,6 +211,14 @@
   opacity: 0;
 }
 
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
 .marquee-track {
   display: flex;
   width: max-content;
