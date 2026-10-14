@@ -9,7 +9,7 @@ export default function LoadingAnimation({ onDone }: { onDone: () => void }) {
       src={loadingBar}
       loop={false}
       autoplay
-      className="aspect-video w-[min(92vw,760px)]"
+      className="aspect-video w-[min(46vw,380px)]"
       subscriptions={{ complete: onDone }}
       aria-hidden
     />
