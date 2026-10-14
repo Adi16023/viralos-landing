@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import StarBorder from "@/components/StarBorder";
+import { StickerButton } from "@/components/sticker-button";
 
 const KEY = "viralos-cookie-notice";
 
@@ -23,18 +23,15 @@ export function CookieNotice() {
             Cookie Policy
           </a>
         </p>
-        <StarBorder
+        <StickerButton
           type="button"
-          color="#1585AC"
-          theme="light"
-          thickness={2}
           onClick={() => {
             window.localStorage.setItem(KEY, "dismissed");
             setOpen(false);
           }}
         >
           Continue
-        </StarBorder>
+        </StickerButton>
       </div>
     </div>
   );

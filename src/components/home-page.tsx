@@ -15,7 +15,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import ScrollVelocity from "@/components/ScrollVelocity";
 import ShinyText from "@/components/ShinyText";
 import SpotlightCard from "@/components/SpotlightCard";
-import StarBorder from "@/components/StarBorder";
+import { StickerButton } from "@/components/sticker-button";
 import Stepper, { Step } from "@/components/Stepper";
 import TrueFocus from "@/components/TrueFocus";
 import WebThreads from "@/components/WebThreads";
@@ -85,13 +85,11 @@ export function HomePage() {
               Viralos answers for professional accounts through the official Instagram API. The person
               goes first. The 24-hour window does the rest.
             </p>
-            <ClickSpark sparkColor="#1585AC" className="mt-8 inline-flex flex-wrap gap-3">
-              <StarBorder as="a" href="/#access" color="#1585AC" theme="light" thickness={2}>
+            <ClickSpark sparkColor="#1585AC" className="mt-8 inline-flex flex-wrap gap-4">
+              <StickerButton href="/#access" variant="yellow">
                 Request access
-              </StarBorder>
-              <StarBorder as="a" href="/#rules" color="#F6F648" theme="light" thickness={1}>
-                See the rules
-              </StarBorder>
+              </StickerButton>
+              <StickerButton href="/#rules">See the rules</StickerButton>
             </ClickSpark>
           </div>
         </section>

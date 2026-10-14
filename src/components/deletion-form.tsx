@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import StarBorder from "@/components/StarBorder";
+import { StickerButton } from "@/components/sticker-button";
 import { SITE } from "@/lib/site";
 
 type Receipt = {
@@ -53,7 +53,7 @@ export function DeletionForm() {
             type="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            className="mt-1 h-11 w-full rounded-2xl border border-black/15 bg-white px-3 text-[#000000] placeholder:text-black/40 outline-none"
+            className="mt-1 h-11 w-full rounded-2xl border-2 border-black bg-white px-3 text-[#000000] shadow-[3px_3px_0_0_#000] outline-none placeholder:text-black/40"
           />
         </label>
         <label className="block text-sm text-[#1a1a1a]">
@@ -61,7 +61,7 @@ export function DeletionForm() {
           <input
             value={handle}
             onChange={(event) => setHandle(event.target.value)}
-            className="mt-1 h-11 w-full rounded-2xl border border-black/15 bg-white px-3 text-[#000000] placeholder:text-black/40 outline-none"
+            className="mt-1 h-11 w-full rounded-2xl border-2 border-black bg-white px-3 text-[#000000] shadow-[3px_3px_0_0_#000] outline-none placeholder:text-black/40"
           />
         </label>
       </div>
@@ -86,9 +86,9 @@ export function DeletionForm() {
           I connected my Instagram professional account
         </label>
       </fieldset>
-      <StarBorder type="submit" color="#1585AC" theme="light" disabled={pending}>
+      <StickerButton type="submit" variant="yellow" disabled={pending}>
         {pending ? "Creating receipt…" : "Create deletion receipt"}
-      </StarBorder>
+      </StickerButton>
       {error ? <p className="text-sm text-[#1585AC]">{error}</p> : null}
       {receipt ? (
         <div className="rounded-2xl border border-black/15 p-4 text-sm text-[#1a1a1a]">
