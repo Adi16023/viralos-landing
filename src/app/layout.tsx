@@ -36,9 +36,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${inter.className} dark h-full antialiased`}
+      className={`${inter.variable} ${inter.className} h-full antialiased`}
     >
-      <body className="min-h-full overflow-x-hidden bg-[#0c0b10] font-sans text-[#f4efe8]">
+      <body className="min-h-full overflow-x-hidden bg-white font-sans text-black">
         {children}
         <CookieNotice />
       </body>

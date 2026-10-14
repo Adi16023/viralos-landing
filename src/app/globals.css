@@ -136,21 +136,21 @@
 }
 
 .legal {
-  color: #d9d2c8;
+  color: #1a1a1a;
   font-size: 1.02rem;
   line-height: 1.7;
 }
 
 .legal h2 {
   margin-top: 2.75rem;
-  color: #f4efe8;
+  color: #000000;
   font-size: 1.45rem;
   letter-spacing: -0.03em;
 }
 
 .legal h3 {
   margin-top: 1.5rem;
-  color: #f4efe8;
+  color: #000000;
   font-size: 1.05rem;
 }
 
@@ -170,7 +170,7 @@
 }
 
 .legal a {
-  color: #ffb089;
+  color: #1585AC;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -184,9 +184,9 @@
 
 .legal th,
 .legal td {
-  border-top: 1px solid #3a342c;
-  border-right: 1px solid #3a342c;
-  border-bottom: 1px solid #3a342c;
+  border-top: 1px solid #d7e4ea;
+  border-right: 1px solid #d7e4ea;
+  border-bottom: 1px solid #d7e4ea;
   padding: 0.65rem 0.7rem;
   text-align: left;
   vertical-align: top;
@@ -198,12 +198,12 @@
 }
 
 .legal th {
-  color: #f4efe8;
+  color: #000000;
   font-weight: 600;
 }
 
 .legal code {
-  color: #f4efe8;
+  color: #000000;
 }
 
 .pill-label-hover {

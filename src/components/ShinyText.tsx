@@ -90,7 +90,7 @@ const blend = (from: number[], to: number[], amount: number) => {
 const ShinyText = ({
   text,
   children,
-  color = '#b5b5b5',
+  color = '#1585AC',
   shineColor = '#ffffff',
   speed = 2,
   delay = 0,

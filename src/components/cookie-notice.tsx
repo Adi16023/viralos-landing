@@ -15,18 +15,18 @@ export function CookieNotice() {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[#141218]/95 px-4 py-3 backdrop-blur">
+    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-black/10 bg-white/95 px-4 py-3 backdrop-blur">
       <div className="mx-auto flex max-w-5xl flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm leading-6 text-[#d9d2c8]">
+        <p className="text-sm leading-6 text-[#1a1a1a]">
           This site does not set analytics or advertising cookies, and it does not load a Meta Pixel.{" "}
-          <a className="text-[#ffb089] underline" href="/cookies">
+          <a className="text-[#1585AC] underline" href="/cookies">
             Cookie Policy
           </a>
         </p>
         <StarBorder
           type="button"
-          color="#ff5c39"
-          theme="dark"
+          color="#1585AC"
+          theme="light"
           thickness={2}
           onClick={() => {
             window.localStorage.setItem(KEY, "dismissed");

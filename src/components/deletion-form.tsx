@@ -46,26 +46,26 @@ export function DeletionForm() {
       }}
     >
       <div className="grid gap-3 sm:grid-cols-2">
-        <label className="block text-sm text-[#d9d2c8]">
+        <label className="block text-sm text-[#1a1a1a]">
           Email
           <input
             required
             type="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            className="mt-1 h-11 w-full rounded-2xl border border-white/15 bg-black/30 px-3 text-[#f4efe8] outline-none"
+            className="mt-1 h-11 w-full rounded-2xl border border-black/15 bg-white px-3 text-[#000000] placeholder:text-black/40 outline-none"
           />
         </label>
-        <label className="block text-sm text-[#d9d2c8]">
+        <label className="block text-sm text-[#1a1a1a]">
           Instagram username, if you have it
           <input
             value={handle}
             onChange={(event) => setHandle(event.target.value)}
-            className="mt-1 h-11 w-full rounded-2xl border border-white/15 bg-black/30 px-3 text-[#f4efe8] outline-none"
+            className="mt-1 h-11 w-full rounded-2xl border border-black/15 bg-white px-3 text-[#000000] placeholder:text-black/40 outline-none"
           />
         </label>
       </div>
-      <fieldset className="space-y-2 text-sm text-[#d9d2c8]">
+      <fieldset className="space-y-2 text-sm text-[#1a1a1a]">
         <legend>Who is asking</legend>
         <label className="flex items-center gap-2">
           <input
@@ -86,18 +86,18 @@ export function DeletionForm() {
           I connected my Instagram professional account
         </label>
       </fieldset>
-      <StarBorder type="submit" color="#ff5c39" theme="dark" disabled={pending}>
+      <StarBorder type="submit" color="#1585AC" theme="light" disabled={pending}>
         {pending ? "Creating receipt…" : "Create deletion receipt"}
       </StarBorder>
-      {error ? <p className="text-sm text-[#ffb089]">{error}</p> : null}
+      {error ? <p className="text-sm text-[#1585AC]">{error}</p> : null}
       {receipt ? (
-        <div className="rounded-2xl border border-white/15 p-4 text-sm text-[#d9d2c8]">
+        <div className="rounded-2xl border border-black/15 p-4 text-sm text-[#1a1a1a]">
           <p>
-            Confirmation code: <strong className="break-all text-[#f4efe8]">{receipt.confirmation_code}</strong>
+            Confirmation code: <strong className="break-all text-[#000000]">{receipt.confirmation_code}</strong>
           </p>
           <p className="mt-2">
             Status page:{" "}
-            <a className="text-[#ffb089] underline" href={receipt.url}>
+            <a className="text-[#1585AC] underline" href={receipt.url}>
               {receipt.url}
             </a>
           </p>
@@ -106,7 +106,7 @@ export function DeletionForm() {
             (UTC). Email the code to {SITE.contactEmail} so a person can match your request.
           </p>
           <a
-            className="mt-3 inline-block text-[#ffb089] underline"
+            className="mt-3 inline-block text-[#1585AC] underline"
             href={`mailto:${SITE.contactEmail}?subject=${encodeURIComponent("Viralos data deletion")}&body=${encodeURIComponent(`Confirmation code: ${receipt.confirmation_code}\nRole: ${role}\nInstagram: ${handle}\nEmail: ${email}`)}`}
           >
             Email this receipt

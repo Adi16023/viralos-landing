@@ -55,34 +55,41 @@ export function HomePage() {
       <SiteHeader />
       <main>
         <section className="relative min-h-[100svh] overflow-hidden">
-          <div className="pointer-events-none absolute inset-0 bg-[#07060c]">
-            <WebThreads />
+          <div className="pointer-events-none absolute inset-0 bg-white">
+            <WebThreads
+              color1="#1585AC"
+              color2="#0a6d90"
+              color3="#F6F648"
+              backgroundColor="#FFFFFF"
+              lightMode
+              brightness={0.9}
+            />
           </div>
           <div className="relative z-10 mx-auto flex min-h-[100svh] w-full min-w-0 max-w-5xl flex-col justify-end px-6 pb-36 pt-36">
             <ShinyText
               text="Instagram DM automation"
-              className="text-sm uppercase tracking-[0.22em] text-[#f4efe8]"
+              className="text-sm uppercase tracking-[0.22em] text-[#000000]"
             />
-            <h1 className="mt-5 max-w-full text-balance text-left font-sans text-[clamp(2.35rem,9vw,6.6rem)] leading-[0.95] text-[#f4efe8]">
+            <h1 className="mt-5 max-w-full text-balance text-left font-sans text-[clamp(2.35rem,9vw,6.6rem)] leading-[0.95] text-[#000000]">
               Reply while the conversation is still open.
             </h1>
-            <div className="mt-8 flex flex-wrap items-center gap-3 text-xl text-[#f4efe8]">
+            <div className="mt-8 flex flex-wrap items-center gap-3 text-xl text-[#000000]">
               <span>Triggered by</span>
               <RotatingText
                 texts={["a comment", "a story reply", "an inbound DM", "an icebreaker"]}
-                mainClassName="overflow-hidden text-[#ffb089]"
+                mainClassName="overflow-hidden text-[#1585AC]"
                 rotationInterval={2200}
               />
             </div>
-            <p className="mt-6 max-w-xl text-lg text-[#d9d2c8]">
+            <p className="mt-6 max-w-xl text-lg text-[#1a1a1a]">
               Viralos answers for professional accounts through the official Instagram API. The person
               goes first. The 24-hour window does the rest.
             </p>
-            <ClickSpark sparkColor="#ff5c39" className="mt-8 inline-flex flex-wrap gap-3">
-              <StarBorder as="a" href="/#access" color="#ff5c39" theme="dark" thickness={2}>
+            <ClickSpark sparkColor="#1585AC" className="mt-8 inline-flex flex-wrap gap-3">
+              <StarBorder as="a" href="/#access" color="#1585AC" theme="light" thickness={2}>
                 Request access
               </StarBorder>
-              <StarBorder as="a" href="/#rules" color="#f4efe8" theme="dark" thickness={1}>
+              <StarBorder as="a" href="/#rules" color="#F6F648" theme="light" thickness={1}>
                 See the rules
               </StarBorder>
             </ClickSpark>
@@ -93,13 +100,13 @@ export function HomePage() {
           <ShinyText text="Inbox" className="text-sm uppercase tracking-[0.18em]" />
           <ScrollReveal
             containerClassName="mt-4"
-            textClassName="font-sans text-[clamp(2.2rem,5vw,4.2rem)] leading-[1.05] text-[#f4efe8]"
+            textClassName="font-sans text-[clamp(2.2rem,5vw,4.2rem)] leading-[1.05] text-[#000000]"
             baseOpacity={1}
             enableBlur={false}
           >
             Signals from the conversations people already started.
           </ScrollReveal>
-          <p className="mt-6 max-w-2xl text-lg text-[#b7b0a6]">
+          <p className="mt-6 max-w-2xl text-lg text-[#3a3a3a]">
             Viralos watches the inbox, comments, and story replies on the professional account you
             connect. It shows which thread is waiting, why it opened, and which reply is still
             allowed.
@@ -110,9 +117,9 @@ export function HomePage() {
               ["Know why it matters", "Keyword, intent, and the time left in the messaging window sit next to the draft."],
               ["Reply with the rules on", "The send stays inside Meta’s window, carries your opt-out, and stops when the person says stop."],
             ].map(([title, copy]) => (
-              <SpotlightCard key={title} theme="dark" className="p-6" spotlightColor="rgba(255, 92, 57, 0.45)">
-                <h2 className="font-sans text-3xl text-[#f4efe8]">{title}</h2>
-                <p className="mt-3 text-[#b7b0a6]">{copy}</p>
+              <SpotlightCard key={title} theme="light" className="p-6" spotlightColor="rgba(21, 133, 172, 0.28)">
+                <h2 className="font-sans text-3xl text-[#000000]">{title}</h2>
+                <p className="mt-3 text-[#3a3a3a]">{copy}</p>
               </SpotlightCard>
             ))}
           </div>
@@ -124,8 +131,8 @@ export function HomePage() {
             "Hand the thread to a person when the question needs a person.",
             "Spend less time refreshing the inbox to find the message that matters.",
           ].map((line) => (
-            <FadeContent key={line} initialOpacity={1} className="border-t border-white/10 pt-8">
-              <p className="font-sans text-3xl text-[#f4efe8] md:text-5xl">{line}</p>
+            <FadeContent key={line} initialOpacity={1} className="border-t border-black/10 pt-8">
+              <p className="font-sans text-3xl text-[#000000] md:text-5xl">{line}</p>
             </FadeContent>
           ))}
         </section>
@@ -134,8 +141,8 @@ export function HomePage() {
           <ShinyText text="See what Viralos can handle" className="text-sm uppercase tracking-[0.18em]" />
           <div className="mt-8">
             <MagicBento
-              theme="dark"
-              glowColor="255, 92, 57"
+              theme="light"
+              glowColor="21, 133, 172"
               columns={3}
               textAutoHide={false}
               items={[
@@ -172,7 +179,7 @@ export function HomePage() {
           </AnimatedContent>
           <div className="mt-6">
             <Carousel
-              theme="dark"
+              theme="light"
               effect="slide"
               baseWidth="100%"
               autoplay
@@ -195,33 +202,33 @@ export function HomePage() {
         </section>
 
         <section id="how" className="mx-auto max-w-5xl px-6 py-24">
-          <p className="text-sm uppercase tracking-[0.18em] text-[#ffb089]">02 · The flow</p>
-          <h2 className="mt-3 max-w-3xl font-sans text-4xl text-[#f4efe8] md:text-6xl">
+          <p className="text-sm uppercase tracking-[0.18em] text-[#1585AC]">02 · The flow</p>
+          <h2 className="mt-3 max-w-3xl font-sans text-4xl text-[#000000] md:text-6xl">
             From the first message to a person, when a person is needed.
           </h2>
           <div className="mt-10">
-            <Stepper theme="dark" accentColor="#ff5c39" orientation="vertical" initialStep={1} frame>
+            <Stepper theme="light" accentColor="#1585AC" orientation="vertical" initialStep={1} frame>
               <Step title="Connect" description="Instagram login">
-                <p className="text-[#d9d2c8]">
+                <p className="text-[#1a1a1a]">
                   An admin of the professional account approves Viralos in Instagram’s official
                   login. We store the token for that account. We never take the password.
                 </p>
               </Step>
               <Step title="Trigger" description="They go first">
-                <p className="text-[#d9d2c8]">
+                <p className="text-[#1a1a1a]">
                   A direct message, a story reply, or a comment on your own post opens the
                   conversation. Nothing sends because someone merely followed or liked.
                 </p>
               </Step>
               <Step title="Reply" description="Inside the window">
-                <p className="text-[#d9d2c8]">
+                <p className="text-[#1a1a1a]">
                   The automated reply goes out within 24 hours of their last interaction, paced
                   inside the Instagram API limits, with one automated private reply per person from
                   a comment or story trigger in that day.
                 </p>
               </Step>
               <Step title="Hand off" description="A human, not a tag">
-                <p className="text-[#d9d2c8]">
+                <p className="text-[#1a1a1a]">
                   If they need support after the window, a real teammate answers. Viralos will not
                   stamp the human-agent tag on a bot message.
                 </p>
@@ -237,13 +244,13 @@ export function HomePage() {
               "OPT-OUT · HUMAN HANDOFF · 24-HOUR WINDOW · NO PASSWORDS · ",
             ]}
             velocity={40}
-            className="text-4xl font-semibold uppercase tracking-tight text-[#f4efe8]/80 md:text-6xl"
+            className="text-4xl font-semibold uppercase tracking-tight text-[#000000]/80 md:text-6xl"
           />
         </section>
 
         <section id="rules" className="mx-auto max-w-5xl px-6 py-24">
           <ShinyText text="Built for the review, not around it" className="text-sm uppercase tracking-[0.18em]" />
-          <h2 className="mt-4 max-w-3xl font-sans text-4xl text-[#f4efe8] md:text-6xl">
+          <h2 className="mt-4 max-w-3xl font-sans text-4xl text-[#000000] md:text-6xl">
             Meta’s messaging rules are the product rules.
           </h2>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -257,33 +264,33 @@ export function HomePage() {
                 key={String(label)}
                 width="100%"
                 height="220px"
-                background="#141218"
+                background="#FFFFFF"
                 borderRadius="24px"
-                borderColor="#2c2833"
-                glareColor="#ff5c39"
+                borderColor="#1585AC"
+                glareColor="#F6F648"
               >
                 <div className="flex h-full flex-col justify-between p-5 text-left">
-                  <CountUp to={Number(value)} className="font-sans text-5xl text-[#f4efe8]" />
+                  <CountUp to={Number(value)} className="font-sans text-5xl text-[#000000]" />
                   <div>
-                    <p className="text-[#ffb089]">{label}</p>
-                    <p className="mt-1 text-sm text-[#b7b0a6]">{copy}</p>
+                    <p className="text-[#1585AC]">{label}</p>
+                    <p className="mt-1 text-sm text-[#3a3a3a]">{copy}</p>
                   </div>
                 </div>
               </GlareHover>
             ))}
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
-            <SpotlightCard theme="dark" className="p-6">
-              <h3 className="text-xl text-[#f4efe8]">Allowed</h3>
-              <p className="mt-3 text-[#b7b0a6]">
+            <SpotlightCard theme="light" className="p-6">
+              <h3 className="text-xl text-[#000000]">Allowed</h3>
+              <p className="mt-3 text-[#3a3a3a]">
                 Official API sends after a person messages, comments, or replies to a story.
                 Promotional content only inside an open window. Opt-out in the thread. Message
                 copies removed when Instagram says the person deleted them.
               </p>
             </SpotlightCard>
-            <SpotlightCard theme="dark" className="p-6">
-              <h3 className="text-xl text-[#f4efe8]">Not allowed</h3>
-              <p className="mt-3 text-[#b7b0a6]">
+            <SpotlightCard theme="light" className="p-6">
+              <h3 className="text-xl text-[#000000]">Not allowed</h3>
+              <p className="mt-3 text-[#3a3a3a]">
                 Browser bots, scraped recipient lists, password sharing, cold welcome pitches, and
                 using the human-agent tag to automate a promotion. Those paths are how accounts
                 lose API access.
@@ -295,14 +302,14 @@ export function HomePage() {
         <section className="mx-auto max-w-5xl px-6 py-16">
           <TrueFocus
             sentence="Consent over volume"
-            borderColor="#ff5c39"
-            glowColor="rgba(255, 92, 57, 0.45)"
+            borderColor="#1585AC"
+            glowColor="rgba(21, 133, 172, 0.45)"
           />
           <div className="mt-12 grid gap-12 md:grid-cols-2">
-            <ScrollReveal baseOpacity={1} enableBlur={false} textClassName="text-2xl leading-snug text-[#f4efe8]">
+            <ScrollReveal baseOpacity={1} enableBlur={false} textClassName="text-2xl leading-snug text-[#000000]">
               Try a keyword. Read the replies. Change the line that feels like spam. The window only stays open when people keep talking back.
             </ScrollReveal>
-            <ScrollReveal baseOpacity={1} enableBlur={false} textClassName="text-2xl leading-snug text-[#f4efe8]">
+            <ScrollReveal baseOpacity={1} enableBlur={false} textClassName="text-2xl leading-snug text-[#000000]">
               Your scripts stay yours. Viralos does not sell Instagram data and does not use private messages to train a public model.
             </ScrollReveal>
           </div>
@@ -310,15 +317,15 @@ export function HomePage() {
 
         <section id="faq" className="mx-auto max-w-3xl px-6 py-20">
           <ShinyText text="Questions, before you connect an account" className="text-sm uppercase tracking-[0.18em]" />
-          <div className="mt-8 divide-y divide-white/10 border-y border-white/10">
+          <div className="mt-8 divide-y divide-black/10 border-y border-black/10">
             {faqs.map((item) => (
               <FadeContent key={item.q} initialOpacity={1}>
                 <details className="group py-5">
-                  <summary className="flex items-center justify-between gap-4 text-lg text-[#f4efe8]">
+                  <summary className="flex items-center justify-between gap-4 text-lg text-[#000000]">
                     {item.q}
-                    <span className="text-[#ffb089] group-open:rotate-45">+</span>
+                    <span className="text-[#1585AC] group-open:rotate-45">+</span>
                   </summary>
-                  <p className="mt-3 max-w-2xl text-[#b7b0a6]">{item.a}</p>
+                  <p className="mt-3 max-w-2xl text-[#3a3a3a]">{item.a}</p>
                 </details>
               </FadeContent>
             ))}
@@ -326,12 +333,12 @@ export function HomePage() {
         </section>
 
         <section id="access" className="mx-auto max-w-3xl px-6 py-20">
-          <BorderGlow glowColor="18 90% 60%" backgroundColor="#141218" borderRadius={28} colors={["#ff5c39", "#f0b429", "#c084fc"]}>
+          <BorderGlow glowColor="198 80% 38%" backgroundColor="#FFFFFF" borderRadius={28} colors={["#1585AC", "#F6F648", "#000000"]}>
             <div className="p-8 md:p-12">
-              <GradientText className="block font-sans text-[clamp(2.4rem,8vw,3.5rem)] leading-tight" colors={["#f4efe8", "#ffb089", "#f0b429"]}>
+              <GradientText className="block font-sans text-[clamp(2.4rem,8vw,3.5rem)] leading-tight" colors={["#1585AC", "#000000", "#0a6d90"]}>
                 The next reply starts here.
               </GradientText>
-              <p className="mt-4 max-w-xl text-[#b7b0a6]">
+              <p className="mt-4 max-w-xl text-[#3a3a3a]">
                 Viralos is opening for professional accounts that want official Instagram DM
                 automation. No spam list. The button opens an email to us.
               </p>

@@ -18,10 +18,10 @@ export function SiteHeader() {
           logo="/viralos-logo.png"
           logoAlt="Viralos"
           items={items}
-          baseColor="#f4efe8"
-          pillColor="#1b1922"
-          pillTextColor="#f4efe8"
-          hoveredPillTextColor="#141218"
+          baseColor="#1585AC"
+          pillColor="#FFFFFF"
+          pillTextColor="#000000"
+          hoveredPillTextColor="#F6F648"
           initialLoadAnimation={false}
         />
       </div>
