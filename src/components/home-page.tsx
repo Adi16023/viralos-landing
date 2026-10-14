@@ -2,7 +2,6 @@
 
 import { AccessForm } from "@/components/access-form";
 import AnimatedContent from "@/components/AnimatedContent";
-import Aurora from "@/components/Aurora";
 import BorderGlow from "@/components/BorderGlow";
 import Carousel from "@/components/Carousel";
 import ClickSpark from "@/components/ClickSpark";
@@ -11,7 +10,6 @@ import FadeContent from "@/components/FadeContent";
 import GlareHover from "@/components/GlareHover";
 import GradientText from "@/components/GradientText";
 import MagicBento from "@/components/MagicBento";
-import Noise from "@/components/Noise";
 import RotatingText from "@/components/RotatingText";
 import ScrollReveal from "@/components/ScrollReveal";
 import ScrollVelocity from "@/components/ScrollVelocity";
@@ -20,6 +18,7 @@ import SpotlightCard from "@/components/SpotlightCard";
 import StarBorder from "@/components/StarBorder";
 import Stepper, { Step } from "@/components/Stepper";
 import TrueFocus from "@/components/TrueFocus";
+import WebThreads from "@/components/WebThreads";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
@@ -56,16 +55,9 @@ export function HomePage() {
       <SiteHeader />
       <main>
         <section className="relative min-h-[100svh] overflow-hidden">
-          <div className="absolute inset-0">
-            <Aurora
-              colorStops={["#1a1030", "#ff5c39", "#f0b429"]}
-              amplitude={0.7}
-              blend={0.55}
-              speed={0.4}
-              brightness={0.7}
-            />
+          <div className="pointer-events-none absolute inset-0 bg-[#07060c]">
+            <WebThreads />
           </div>
-          <Noise opacity={0.16} blendMode="overlay" />
           <div className="relative z-10 mx-auto flex min-h-[100svh] w-full min-w-0 max-w-5xl flex-col justify-end px-6 pb-36 pt-36">
             <ShinyText
               text="Instagram DM automation"
