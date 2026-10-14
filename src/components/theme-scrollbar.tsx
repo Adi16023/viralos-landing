@@ -51,7 +51,7 @@ export function ThemeScrollbar() {
   return (
     <div
       ref={trackRef}
-      className={`fixed top-0 right-0 z-[60] h-dvh w-4 border-l-2 border-black bg-white ${thumb.visible ? "" : "pointer-events-none opacity-0"}`}
+      className={`fixed top-0 right-0 z-[60] h-dvh w-4 border-l-2 border-transparent bg-white ${thumb.visible ? "" : "pointer-events-none opacity-0"}`}
       role="scrollbar"
       aria-orientation="vertical"
       aria-valuemin={0}
@@ -98,7 +98,7 @@ export function ThemeScrollbar() {
       }}
     >
       <div
-        className="absolute inset-x-0.5 rounded-full border-2 border-black bg-[#1585AC] hover:bg-[#F6F648]"
+        className="absolute inset-x-0.5 rounded-full border-2 border-transparent bg-[#1585AC] hover:bg-[#F6F648]"
         style={{ top: thumb.top, height: thumb.height }}
       />
     </div>
