@@ -126,6 +126,7 @@
   }
   html {
     @apply font-sans;
+    scroll-padding-top: 5.5rem;
   }
   button,
   a,
@@ -208,4 +209,25 @@
 
 .pill-label-hover {
   opacity: 0;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: viralos-marquee 32s linear infinite;
+}
+
+@keyframes viralos-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
 }

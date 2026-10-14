@@ -1,9 +1,14 @@
-"use client";
-
-import ShinyText from "@/components/ShinyText";
 import { SITE } from "@/lib/site";
 
-const links = [
+const product = [
+  { href: "/#product", label: "Product" },
+  { href: "/#how", label: "How it works" },
+  { href: "/#rules", label: "Messaging rules" },
+  { href: "/#faq", label: "FAQ" },
+  { href: "/#access", label: "Request access" },
+];
+
+const policies = [
   { href: "/privacy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms of Service" },
   { href: "/cookies", label: "Cookie Policy" },
@@ -12,30 +17,47 @@ const links = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-black/10 px-6 py-16">
-      <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.4fr_1fr]">
+    <footer className="border-t border-black/10 bg-white">
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <img src="/viralos-logo.png" alt="Viralos" className="h-12 w-auto" />
-          <p className="mt-4 max-w-md text-[#3a3a3a]">
+          <img src="/viralos-logo.png" alt="Viralos" className="h-11 w-auto" />
+          <p className="mt-4 max-w-sm text-[#3a3a3a]">
             Viralos replies to Instagram conversations for professional accounts, through the
             official API, after a person reaches out.
           </p>
+          <a className="mt-5 inline-block font-medium text-[#1585AC]" href={`mailto:${SITE.contactEmail}`}>
+            {SITE.contactEmail}
+          </a>
         </div>
         <div>
-          <ShinyText text="Policies Meta can open" className="text-sm uppercase tracking-[0.18em]" />
-          <ul className="mt-4 space-y-2">
-            {links.map((link) => (
+          <p className="text-sm font-semibold text-[#000000]">Product</p>
+          <ul className="mt-4 space-y-2.5">
+            {product.map((link) => (
               <li key={link.href}>
-                <a className="text-[#000000] underline-offset-4 hover:underline" href={link.href}>
+                <a className="text-[#1a1a1a] hover:text-[#1585AC]" href={link.href}>
                   {link.label}
                 </a>
               </li>
             ))}
           </ul>
-          <a className="mt-6 inline-block text-[#1585AC]" href={`mailto:${SITE.contactEmail}`}>
-            {SITE.contactEmail}
-          </a>
         </div>
+        <div>
+          <p className="text-sm font-semibold text-[#000000]">Policies</p>
+          <ul className="mt-4 space-y-2.5">
+            {policies.map((link) => (
+              <li key={link.href}>
+                <a className="text-[#1a1a1a] hover:text-[#1585AC]" href={link.href}>
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div className="border-t border-black/10">
+        <p className="mx-auto max-w-6xl px-6 py-5 text-sm text-[#3a3a3a]">
+          © {new Date().getFullYear()} Viralos. Official Instagram API only.
+        </p>
       </div>
     </footer>
   );
