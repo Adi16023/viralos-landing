@@ -7,14 +7,29 @@ const LoadingAnimation = dynamic(() => import("@/components/loading-animation"),
   ssr: false,
 });
 
+const sessionKey = "viralos:intro-seen";
+let seenInDocument = false;
+
 export function SiteLoader() {
-  const [phase, setPhase] = useState<"play" | "leave" | "gone">("play");
+  const [phase, setPhase] = useState<"checking" | "play" | "leave" | "gone">("checking");
 
   useEffect(() => {
-    if (phase === "gone") {
-      document.body.style.overflow = "";
-      return;
-    }
+    const frame = window.requestAnimationFrame(() => {
+      let seen = seenInDocument;
+      try {
+        seen ||= window.sessionStorage.getItem(sessionKey) === "true";
+        window.sessionStorage.setItem(sessionKey, "true");
+      } catch (error) {
+        console.warn("Viralos could not persist the intro state for this tab session.", error);
+      }
+      seenInDocument = true;
+      setPhase(seen ? "gone" : "play");
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
+
+  useEffect(() => {
+    if (phase !== "play" && phase !== "leave") return;
     const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
@@ -23,12 +38,13 @@ export function SiteLoader() {
   }, [phase]);
 
   useEffect(() => {
+    if (phase !== "play") return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const timer = window.setTimeout(() => {
       setPhase((current) => (current === "play" ? "leave" : current));
     }, reduce ? 300 : 6000);
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [phase]);
 
   useEffect(() => {
     if (phase !== "leave") return;
@@ -36,7 +52,7 @@ export function SiteLoader() {
     return () => window.clearTimeout(timer);
   }, [phase]);
 
-  if (phase === "gone") return null;
+  if (phase === "checking" || phase === "gone") return null;
 
   return (
     <div

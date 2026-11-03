@@ -38,6 +38,12 @@ when the links no longer fit and respects reduced-motion preferences.
 The original wordmark sits separately on the left; desktop navigation is
 centered, with a blue surface and yellow highlight matching the brand.
 
+Internal header/footer links and sticker buttons use client-side navigation.
+The intro loader runs once per tab session, tracked by
+`sessionStorage["viralos:intro-seen"]`; refreshing or navigating does not replay
+it. If session storage is blocked, a console warning is emitted and the loader
+is limited to once per document instead.
+
 ```bash
 npm install
 npm run dev

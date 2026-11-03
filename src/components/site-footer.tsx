@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SITE } from "@/lib/site";
 
 const product = [
@@ -35,9 +36,9 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-2.5">
             {product.map((link) => (
               <li key={link.href}>
-                <a className="text-[#1a1a1a] hover:text-[#1585AC]" href={link.href}>
+                <Link className="text-[#1a1a1a] hover:text-[#1585AC]" href={link.href}>
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -47,9 +48,9 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-2.5">
             {policies.map((link) => (
               <li key={link.href}>
-                <a className="text-[#1a1a1a] hover:text-[#1585AC]" href={link.href}>
+                <Link className="text-[#1a1a1a] hover:text-[#1585AC]" href={link.href}>
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

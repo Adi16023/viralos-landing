@@ -7,6 +7,7 @@ import PillNav from "@/components/PillNav";
 import { StickerButton } from "@/components/sticker-button";
 
 const items = [
+  { label: "Home", href: "/", ariaLabel: "Home" },
   { label: "Product", href: "/#product", ariaLabel: "Product" },
   { label: "How it works", href: "/#how", ariaLabel: "How it works" },
   { label: "Pricing", href: "/pricing", ariaLabel: "Pricing" },
@@ -23,7 +24,7 @@ function NavigationLink({
   href,
   ...props
 }: AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) {
-  return href.includes("#") ? <a href={href} {...props} /> : <Link href={href} {...props} />;
+  return <Link href={href} {...props} />;
 }
 
 export function SiteHeader() {
@@ -44,7 +45,7 @@ export function SiteHeader() {
             className="h-8 w-auto max-w-[9.5rem] object-contain md:h-9"
           />
         </Link>
-        <div className="min-w-0 flex-1 lg:w-max">
+        <div className="flex min-w-0 flex-1 justify-center lg:w-[36rem]">
           <PillNav
             items={items}
             activeHref={`${pathname}${pathname === "/" ? hash : ""}`}
