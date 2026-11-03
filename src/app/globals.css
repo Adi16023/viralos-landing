@@ -136,6 +136,12 @@
   }
 }
 
+.site-container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: clamp(1.5rem, 4vw, 6rem);
+}
+
 .legal {
   color: #1a1a1a;
   font-size: 1.02rem;
