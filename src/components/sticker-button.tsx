@@ -1,5 +1,5 @@
 import type { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from "react";
-import Link from "next/link";
+import { LocaleLink } from "@/components/locale-link";
 import { cn } from "@/lib/utils";
 
 const sticker =
@@ -31,9 +31,9 @@ export function StickerButton({ variant = "white", className, children, ...props
   if ("href" in props && props.href) {
     if (props.href.startsWith("/") && !props.href.startsWith("//")) {
       return (
-        <Link className={classes} {...props}>
+        <LocaleLink className={classes} {...props}>
           {children}
-        </Link>
+        </LocaleLink>
       );
     }
     return (

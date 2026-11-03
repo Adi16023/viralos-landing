@@ -35,6 +35,20 @@ export default function CookiesPage() {
         </thead>
         <tbody>
           <tr>
+            <td>VIRALOS_LOCALE</td>
+            <td>Functional HTTP cookie</td>
+            <td>This site, readable by the browser and server</td>
+            <td>One year after you choose a language</td>
+            <td>Remembers your English or Tamil choice. Set only when you use the language selector. It is not used for tracking.</td>
+          </tr>
+          <tr>
+            <td>viralos:intro-seen</td>
+            <td>Functional session storage, not an HTTP cookie</td>
+            <td>sessionStorage in the current browser tab</td>
+            <td>Until the tab session ends</td>
+            <td>Shows the introductory loading animation once per tab session.</td>
+          </tr>
+          <tr>
             <td>viralos-cookie-notice</td>
             <td>Functional storage, not an HTTP cookie</td>
             <td>localStorage on this site’s origin</td>
@@ -59,7 +73,9 @@ export default function CookiesPage() {
 
       <h2>3. Your choices</h2>
       <p>
-        You can clear local storage for this site in your browser, or block storage entirely. The
+        You can change languages using the selector, clear cookies and local or session storage
+        for this site in your browser, or block storage entirely. Without a saved language
+        preference, visits to the unprefixed home and pricing URLs default to English. The
         pages, including the privacy, terms, and data-deletion pages, still load. Browser help:
       </p>
       <ul>

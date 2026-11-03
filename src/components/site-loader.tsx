@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+import { useMessages } from "next-intl";
 
 const LoadingAnimation = dynamic(() => import("@/components/loading-animation"), {
   ssr: false,
@@ -11,6 +12,7 @@ const sessionKey = "viralos:intro-seen";
 let seenInDocument = false;
 
 export function SiteLoader() {
+  const copy = useMessages().common;
   const [phase, setPhase] = useState<"checking" | "play" | "leave" | "gone">("checking");
 
   useEffect(() => {
@@ -59,7 +61,7 @@ export function SiteLoader() {
       className={`fixed inset-0 z-[80] flex items-center justify-center bg-white transition-opacity duration-500 ${phase === "leave" ? "pointer-events-none opacity-0" : "opacity-100"}`}
       role="status"
       aria-live="polite"
-      aria-label="Loading"
+      aria-label={copy.loading}
     >
       <LoadingAnimation onDone={() => setPhase((current) => (current === "play" ? "leave" : current))} />
     </div>

@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useMessages } from "next-intl";
 import { StickerButton } from "@/components/sticker-button";
 import { SITE } from "@/lib/site";
 
 export function AccessForm() {
+  const copy = useMessages().common;
   const [email, setEmail] = useState("");
   const [account, setAccount] = useState("");
 
@@ -18,7 +20,7 @@ export function AccessForm() {
       }}
     >
       <label className="sr-only" htmlFor="access-email">
-        Work email
+        {copy.workEmail}
       </label>
       <input
         id="access-email"
@@ -26,11 +28,11 @@ export function AccessForm() {
         type="email"
         value={email}
         onChange={(event) => setEmail(event.target.value)}
-        placeholder="Work email"
+        placeholder={copy.workEmail}
         className="h-12 flex-1 rounded-2xl border-2 border-black bg-white px-4 text-[#000000] shadow-[3px_3px_0_0_#000] outline-none placeholder:text-black/40"
       />
       <label className="sr-only" htmlFor="access-account">
-        Instagram username
+        {copy.username}
       </label>
       <input
         id="access-account"
@@ -40,7 +42,7 @@ export function AccessForm() {
         className="h-12 w-full rounded-2xl border-2 border-black bg-white px-4 text-[#000000] shadow-[3px_3px_0_0_#000] outline-none placeholder:text-black/40 md:w-44"
       />
       <StickerButton type="submit" variant="yellow" className="w-full md:w-auto">
-        Request access
+        {copy.requestAccess}
       </StickerButton>
     </form>
   );

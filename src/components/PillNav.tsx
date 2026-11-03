@@ -47,6 +47,7 @@ export interface PillNavProps {
   collapse?: 'auto' | 'always' | 'never';
   onMenuToggle?: (open: boolean) => void;
   mobileFooter?: ReactNode;
+  menuLabels?: { open: string; close: string };
   ariaLabel?: string;
   className?: string;
   style?: CSSProperties;
@@ -248,6 +249,7 @@ const PillNav = ({
   collapse = 'auto',
   onMenuToggle,
   mobileFooter,
+  menuLabels = { open: 'Open menu', close: 'Close menu' },
   ariaLabel = 'Main',
   className = '',
   style
@@ -890,7 +892,7 @@ const PillNav = ({
           className={[TOGGLE, joined ? TOGGLE_BARE : SURFACE].join(' ')}
           aria-expanded={open}
           aria-controls={panelId}
-          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-label={open ? menuLabels.close : menuLabels.open}
           onClick={toggle}
         >
           <span className={BURGER} aria-hidden="true">

@@ -4,11 +4,32 @@ Public site for Viralos, an Instagram DM automation platform. The marketing page
 
 ## Pricing
 
-`/pricing` presents the freemium model: Spark is free forever, and paid plans offer
+`/en/pricing` and `/ta/pricing` present the freemium model: Spark is free forever, and paid plans offer
 a 14-day trial with a card required at signup. Monthly/yearly prices and plan
 limits live in `src/components/pricing-plans.tsx`. Annual prices are displayed as
 yearly totals in INR. Plan buttons lead to the existing access-request flow;
 Enterprise enquiries open an email. This page does not collect payments.
+
+## Languages and translation review
+
+Home and Pricing have dedicated `/en`, `/ta`, `/en/pricing`, and `/ta/pricing`
+URLs. `next-intl` provides the message context; it does not generate translations
+or call a translation service. English and draft Tamil copy live in
+`src/i18n/messages/en.ts` and `src/i18n/messages/ta.ts`. The Tamil message file
+must satisfy the English TypeScript schema. A native Tamil speaker should review
+the draft, including product terminology and pricing claims, before publication.
+Brand and plan names, INR amounts, and messaging limits are unchanged.
+
+The header language selector preserves the current page and section and stores
+`VIRALOS_LOCALE` for one year when clicked. The bare `/` and `/pricing` routes
+redirect to that preference, or English if none is set. Explicit locale URLs
+always win; browser language does not force a redirect. Root layouts provide
+the correct HTML language, Noto Sans Tamil, translated metadata, canonical URLs,
+and alternate-language links. A language change crosses localized root layouts,
+so Next.js may load a new document; the session intro does not replay.
+
+Legal pages retain their existing English URLs and are labelled English in the
+Tamil footer. They are intentionally not machine-translated.
 
 ## Meta dashboard URLs
 
