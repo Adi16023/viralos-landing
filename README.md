@@ -45,7 +45,42 @@ In App settings → Basic, after the site is deployed:
 
 Set `META_APP_SECRET` in the host before using the callback. The instructions page works without it. The callback checks Meta’s `signed_request` and returns `url` and `confirmation_code`.
 
-Pages are public, use HTTPS on Vercel, and do not redirect to the home page or ask for a login.
+Pages are public, use HTTPS on Cloudflare Workers, and do not redirect to the home page or ask for a login.
+
+## Deploy (Cloudflare Workers)
+
+This app runs on Cloudflare via [`@opennextjs/cloudflare`](https://opennext.js.org/cloudflare).
+
+```bash
+npm install
+cp .env.example .env.local   # set META_APP_SECRET and NEXT_PUBLIC_SITE_URL
+cp .dev.vars.example .dev.vars
+npx wrangler login
+npm run deploy
+```
+
+`NEXT_PUBLIC_SITE_URL` is set in `wrangler.jsonc` (`vars`). Set server secrets after the first deploy:
+
+```bash
+npx wrangler secret put META_APP_SECRET
+npx wrangler secret put DELETION_SIGNING_SECRET   # optional
+```
+
+Or connect the GitHub repo in the Cloudflare dashboard (Workers → Create → Import repository) and set those as Worker secrets. Build command: `npx opennextjs-cloudflare build`. Deploy command: `npx opennextjs-cloudflare deploy`.
+
+### Custom domain (`viralos.in`)
+
+1. In Cloudflare, add the site **viralos.in** (or attach the domain to the Worker).
+2. At GoDaddy → DNS → Nameservers, switch from `ns59/ns60.domaincontrol.com` to the two Cloudflare nameservers Cloudflare shows you.
+3. In Cloudflare DNS, keep or recreate:
+   - `CNAME` `www` → `viralos.in` (proxied)
+   - Worker custom domain / route for `@` (apex) and `www`
+   - Keep `_dmarc` TXT if you still want DMARC
+4. Remove GoDaddy’s parked `A` `@` → `Parked` record (Cloudflare will serve the Worker instead).
+5. Update Meta App Review URLs and `NEXT_PUBLIC_SITE_URL` to `https://viralos.in`.
+6. After DNS propagates, remove the Vercel project/domain so it no longer claims the hostname.
+
+`npm run preview` builds and serves the Worker locally (closer to production than `next dev`).
 
 ## Local
 

@@ -1,0 +1,4 @@
+NEXTJS_ENV=development
+# META_APP_SECRET=
+# DELETION_SIGNING_SECRET=
+# NEXT_PUBLIC_SITE_URL=https://viralos.in
